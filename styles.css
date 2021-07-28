@@ -1,0 +1,239 @@
+:root {
+  --font: #ddd;
+  --background: #262c3b;
+  --header: #393e46;
+  --title: #00adb5;
+  --border: #00adb5;
+  --button: hsl(33, 89%, 40%);
+  --button2: hsl(18, 91%, 40%);
+  --button-hover: hsl(33, 89%, 45%);
+  --button-hover2: hsl(18, 91%, 45%);
+  --button-active: hsl(33, 89%, 50%);
+  --button-active2: hsl(18, 91%, 50%);
+  --button-player: #1db954;
+  --button-player2: #10652e;
+  --button-comp: #b150e2;
+  --button-comp2: #872ec4;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "ZCOOL KuaiLe", cursive;
+  font-size: 62.5%;
+  line-height: 1.6;
+  background-color: var(--background);
+  color: var(--font);
+}
+
+.header {
+  width: 100%;
+  /* height: 100px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 5rem;
+  animation-name: titleBounce;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+.scoreboard {
+  display: flex;
+  width: 50%;
+  /* margin: auto; */
+}
+
+.player-score,
+.score-label,
+.comp-score {
+  display: inline-block;
+  font-size: 3rem;
+}
+
+.player-score,
+.comp-score {
+  width: 2em;
+  text-align: center;
+}
+
+.button {
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  background: linear-gradient(var(--button), var(--button2));
+  border-style: none;
+  border-radius: 10px;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  height: 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  border-radius: 0px 0px 8px 8px;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  height: 50%;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 8px 8px 0px 0px;
+}
+
+.button-img {
+  filter: invert(1);
+  pointer-events: none;
+}
+
+.button:hover {
+  background: linear-gradient(var(--button-hover), var(--button-hover2));
+}
+
+.button:active {
+  background: linear-gradient(var(--button-active), var(--button-active2));
+}
+
+.button-reset {
+  width: 100%;
+  font-family: inherit;
+  font-size: 2em;
+  color: inherit;
+}
+
+.battle-ground,
+.button-container {
+  height: 143px;
+  display: flex;
+  width: 420px;
+  margin: auto;
+}
+
+.battle-ground {
+  justify-content: space-between;
+}
+
+.button-container {
+  justify-content: center;
+}
+
+hr {
+  margin: 10px;
+}
+
+#player-champion {
+  background: linear-gradient(var(--button), var(--button2));
+  animation-name: clashLeft;
+}
+
+#comp-champion {
+  background: linear-gradient(var(--button-comp), var(--button-comp2));
+  animation-name: clashRight;
+}
+
+#player-champion,
+#comp-champion {
+  /* animation-iteration-count: infinite; */
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clashLeft {
+  0% {
+    left: 0;
+  }
+  85% {
+    left: -10%;
+  }
+  95% {
+    left: 19%;
+  }
+  97% {
+    left: 17%;
+  }
+  100% {
+    left: 19%;
+  }
+}
+
+@keyframes clashRight {
+  0% {
+    right: 0;
+  }
+  85% {
+    right: -10%;
+  }
+  95% {
+    right: 19%;
+  }
+  97% {
+    right: 17%;
+  }
+  100% {
+    right: 19%;
+  }
+}
+
+#result-display,
+#instruction-display {
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* .winner {
+  animation-name: triumph;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+} */
+
+/* .loser {
+  animation-name: despair;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+} */
+
+/* @keyframes cracks {
+
+}
+
+@keyframes triumph {
+  from {align-self: unset;}
+  to {align-self: center;}
+}
+
+@keyframes despair {
+
+}
+
+@keyframes titleBounce {
+  from {bottom: 0%;}
+  to {bottom: ;}
+
+} */
+/* background-image: url(/images/cracks.png); */

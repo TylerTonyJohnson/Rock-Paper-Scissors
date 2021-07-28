@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Let's play a game</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+    <header class="header">
+      <h1 id="title" class="title">Rock-Paper-Scissors</h1>
+      <div class="score-board">
+        <p id="player-score" class="player-score">0</p>
+        <p id="score-label" class="score-label"> - SCORE - </p>
+        <p id="comp-score" class="comp-score">0</p>
+      </div>
+    </header>
+    <main>
+
+      <hr></hr>
+
+      <div id="battle-ground" class="battle-ground">
+
+      </div>
+
+      <hr></hr>
+
+      <div class="button-container">
+        <button class="button" id="rock-button" name="rock">
+          <img class="button-img" src="images/rock.png"/>
+        </button>
+        <button class="button" id="paper-button" name="paper">
+          <img class="button-img" src="images/paper.png"/>
+        </button>
+        <button class="button" id="scissors-button" name="scissors">
+          <img class="button-img" src="images/scissors.png"/>
+        </button>
+        
+        <button class="button button-reset" id="reset-button" style="display: none">New Game</button>
+      </div>
+
+      <hr></hr>
+
+      <div>
+        <p id="result-display"></p>
+        <p id="instruction-display">Click a button</p>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
